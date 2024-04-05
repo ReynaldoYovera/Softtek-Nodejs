@@ -1,0 +1,28 @@
+# package directories
+node_modules
+jspm_packages
+dist/
+reports/
+tmp/
+.cache/
+cache/
+coverage/
+.vscode/
+.scannerwork/
+
+*.Logs
+*lock
+env.yaml
+
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+*.lock
+.vscode/
+
+# Properties
+.env
+
+# Serverless directories
+.serverless

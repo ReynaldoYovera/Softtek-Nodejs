@@ -1,0 +1,101 @@
+service: api-startwars
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    REGION: ${self:provider.region}
+    PEOPLE_STARWARS_TABLE: PeopleStarWarsTable
+    SHIPS_STARWARS_TABLE: ShipsStarWarsTable
+    ENDPOINT_PEOPLE: https://swapi.py4e.com/api/people
+    ENDPOINT_STARSHIPS: https://swapi.py4e.com/api/starships
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
+        - "dynamodb:UpdateItem"
+        - "dynamodb:DeleteItem"
+        - "dynamodb:Scan"
+      Resource:
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.PEOPLE_STARWARS_TABLE}"
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
+        - "dynamodb:UpdateItem"
+        - "dynamodb:DeleteItem"
+        - "dynamodb:Scan"
+      Resource:
+        - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.SHIPS_STARWARS_TABLE}"
+package:
+  exclude:
+    - src/**
+    - .serverless/**
+    - cache/**
+    - reports/**
+    - test/**
+
+functions:
+  getPeople:
+    handler: dist/domain/people.getPeople
+    events:
+      - http:
+          method: get
+          path: get/people
+          cors: true
+  setPeople:
+    handler: dist/domain/people.setPeople
+    events:
+      - http:
+          method: post
+          path: set/people
+          cors: true
+  getShips:
+    handler: dist/domain/ships.getShips
+    events:
+      - http:
+          method: get
+          path: get/ships
+          cors: true
+  setShip:
+    handler: dist/domain/ships.setShip
+    events:
+      - http:
+          method: post
+          path: set/ship
+          cors: true
+resources:
+  Resources:
+    PeopleStarWarsTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+        - AttributeName: "personaId"
+          AttributeType: "S"
+        KeySchema:
+        - AttributeName: "personaId"
+          KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.PEOPLE_STARWARS_TABLE}
+        StreamSpecification:
+          StreamViewType: NEW_IMAGE
+    ShipsStarWarsTable:
+        Type: "AWS::DynamoDB::Table"
+        Properties:
+          AttributeDefinitions:
+          - AttributeName: "naveId"
+            AttributeType: "S"
+          KeySchema:
+          - AttributeName: "naveId"
+            KeyType: "HASH"
+          ProvisionedThroughput:
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+          TableName: ${self:provider.environment.SHIPS_STARWARS_TABLE}
+          StreamSpecification:
+            StreamViewType: NEW_IMAGE

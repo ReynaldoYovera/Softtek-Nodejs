@@ -1,0 +1,52 @@
+[
+	{
+		"naveId": "",
+		"nombre": "CR90 corvette",
+		"modelo": "CR90 corvette",
+		"fabricante": "Corellian Engineering Corporation",
+		"costo_en_creditos": "",
+		"longitud": "150",
+		"max_velocidad": "950",
+		"tripulacion": "30-165",
+		"pasajeros": "600",
+		"capacidad_carga": "3000000",
+		"consumibles": "1 year",
+		"ranking": "2.0",
+		"MGLT": "60",
+		"clase": "corvette",
+		"pilotos": [],
+		"peliculas": [
+			"https://swapi.py4e.com/api/films/1/",
+			"https://swapi.py4e.com/api/films/3/",
+			"https://swapi.py4e.com/api/films/6/"
+		],
+		"creado": "2014-12-10T14:20:33.369000Z",
+		"editado": "2014-12-20T21:23:49.867000Z",
+		"url": "https://swapi.py4e.com/api/starships/2/"
+	},
+	{
+		"naveId": "",
+		"nombre": "Star Destroyer",
+		"modelo": "Imperial I-class Star Destroyer",
+		"fabricante": "Kuat Drive Yards",
+		"costo_en_creditos": "",
+		"longitud": "1,600",
+		"max_velocidad": "975",
+		"tripulacion": "47,060",
+		"pasajeros": "n/a",
+		"capacidad_carga": "36000000",
+		"consumibles": "2 years",
+		"ranking": "2.0",
+		"MGLT": "60",
+		"clase": "Star Destroyer",
+		"pilotos": [],
+		"peliculas": [
+			"https://swapi.py4e.com/api/films/1/",
+			"https://swapi.py4e.com/api/films/2/",
+			"https://swapi.py4e.com/api/films/3/"
+		],
+		"creado": "2014-12-10T15:08:19.848000Z",
+		"editado": "2014-12-20T21:23:49.870000Z",
+		"url": "https://swapi.py4e.com/api/starships/3/"
+	}
+]

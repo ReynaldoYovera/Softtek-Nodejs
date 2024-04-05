@@ -1,0 +1,31 @@
+{
+	"naveId": "",
+	"nombre": "Millennium Falcon",
+	"modelo": "YT-1300 light freighter",
+	"fabricante": "Corellian Engineering Corporation",
+	"costo_en_creditos": "",
+	"longitud": "34.37",
+	"max_velocidad": "1050",
+	"tripulacion": "4",
+	"pasajeros": "6",
+	"capacidad_carga": "100000",
+	"consumibles": "2 months",
+	"ranking": "0.5",
+	"MGLT": "75",
+	"clase": "Light freighter",
+	"pilotos": [
+		"https://swapi.py4e.com/api/people/13/",
+		"https://swapi.py4e.com/api/people/14/",
+		"https://swapi.py4e.com/api/people/25/",
+		"https://swapi.py4e.com/api/people/31/"
+	],
+	"peliculas": [
+		"https://swapi.py4e.com/api/films/1/",
+		"https://swapi.py4e.com/api/films/2/",
+		"https://swapi.py4e.com/api/films/3/",
+		"https://swapi.py4e.com/api/films/7/"
+	],
+	"creado": "2014-12-10T16:59:45.094000Z",
+	"editado": "2014-12-20T21:23:49.880000Z",
+	"url": "https://swapi.py4e.com/api/starships/10/"
+}
